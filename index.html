@@ -52,22 +52,22 @@
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmpr9PrhxFm-BDq7RZ1X6ytsxBC-m72oMHNnaJlEJ33Sm1MQsPZtcgItdbsIhMYSgYdA/exec"; //esta es la url de gas
     
     var url = document.location.href;
-    var k = url.substr(url.lastIndexOf("k=")+2); //http....?k=valorkey         se toma del url lo que llegue despues de la k es corresponde a la clave para buscar en gas
+    var k = url.substr(url.lastIndexOf("k=")+2); 
     if(k){
-      fetch(AS_URL_BASE+'?k='+k) //se obtiene el valor de la url base con la clave 
+      fetch(AS_URL_BASE+'?k='+k) 
       .then(r => r.text())
       .then((r) => {
         console.log(r);
         //document.write(r);
         if(r){
-          document.location.replace(r); //se recibe entonces s redireccion a la url 
+          document.location.replace(r); 
         }
       })
       .catch(err => console.log(err))
     }
 
   </script>
-  //muestra un logger mientras se hace el match y la validacion con gas
+  
   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
   
   
